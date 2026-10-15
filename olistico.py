@@ -156,7 +156,7 @@ if st.button("🚀 Genera Analisi e Piatti", type="primary"):
                     fa_sport, sport_praticato, intensita_sport
                 )
                 
-                response = chiama_gemini_con_retry(client, 'gemini-2.5-flash', prompt_completo)
+                response = chiama_gemini_con_retry(client, 'gemini-3.8-flash', prompt_completo)
                 st.success("✅ Analisi completata con successo!")
                 st.markdown(response.text)
 
@@ -193,7 +193,7 @@ if st.button("🔍 Cerca Negozi, Supermercati e Prodotti", type="secondary"):
                 Per ogni opzione (supermercato GDO o negozio bio), spiega quali tra i prodotti indicati si possono trovare più facilmente.
                 """
                 
-                resp_mappa = chiama_gemini_con_retry(client, 'gemini-2.5-flash', prompt_mappa)
+                resp_mappa = chiama_gemini_con_retry(client, 'gemini-3.8-flash', prompt_mappa)
                 st.markdown(resp_mappa.text)
                 
                 query_mappa = f"supermercati con reparti biologici e negozi bio {prodotti_ricerca} {citta_ricerca}"
