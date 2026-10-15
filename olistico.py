@@ -9,7 +9,7 @@ GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
 # --- CONFIGURAZIONE PAGINA STREAMLIT ---
 st.set_page_config(
-    page_title="NutriMind & Salute",
+    page_title="NutriMind Salute",
     page_icon="🥗",
     layout="wide"
 )
@@ -64,7 +64,7 @@ def chiama_gemini_con_retry(client, model, contents, max_tentativi=3):
 # --- TITOLO PRINCIPALE IN RIQUADRO BLU SCURO ---
 st.markdown("""
 <div class="title-box-darkblue">
-    <h1 style="color: #ffffff; margin: 0; font-size: 2.2rem;">🥗 NutriMind & Salute</h1>
+    <h1 style="color: #ffffff; margin: 0; font-size: 2.2rem;">🥗 NutriMind Salute</h1>
     <h3 style="color: #93c5fd; margin: 6px 0 0 0; font-weight: 500;"> La scienza nel piatto, la salute nella mente.</h3>
 </div>
 """, unsafe_allow_html=True)
@@ -95,7 +95,7 @@ with st.sidebar:
         intensita_sport = st.select_slider("Intensità:", options=["Lieve", "Moderata", "Agonistica / Intensa"])
 
 # --- DISPENSARIA INGREDIENTI ---
-st.subheader("🛒 Dispensa prodotti in tuo possesso")
+st.subheader("🛒 Prodotti in tuo possesso")
 ingredienti = st.text_area(
     "Elenca gli ingredienti a tua disposizione:",
     placeholder="Es. Zucchine, farina, uova, ecc..",
@@ -168,7 +168,7 @@ st.divider()
 # ==========================================
 # SEZIONE A SÉ STANTE: DOVE ACQUISTARE I PRODOTTI
 # ==========================================
-st.header("📍 Dove Acquistare i tuoi Prodotti Biologici")
+st.header("📍 Dove acquistare i tuoi prodotti")
 st.write("Verifica dove reperire i prodotti biologici indicati.")
 
 col_citta, col_prod = st.columns(2)
@@ -178,7 +178,7 @@ with col_prod:
     prodotti_ricerca = st.text_area("Prodotti biologici da cercare:", value=ingredienti, key="prodotti_negozi")
 
 # --- BOTTONE RICERCA NEGOZI E GDO (CON LOOP DI RETRY) ---
-if st.button("🔍 Cerca Negozi, Supermercati GDO e Prodotti", type="secondary"):
+if st.button("🔍 Cerca Negozi, Supermercati e Prodotti", type="secondary"):
     if not citta_ricerca.strip() or not prodotti_ricerca.strip():
         st.warning("⚠️ Inserisci sia la città che i prodotti da cercare.")
     else:
