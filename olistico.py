@@ -64,7 +64,7 @@ def chiama_gemini_con_retry(client, model, contents, max_tentativi=3):
 # --- TITOLO PRINCIPALE IN RIQUADRO BLU SCURO ---
 st.markdown("""
 <div class="title-box-darkblue">
-    <h1 style="color: #ffffff; margin: 0; font-size: 2.2rem;">🥗 NutriMind e Salute</h1>
+    <h1 style="color: #ffffff; margin: 0; font-size: 2.2rem;">🥗 NutriMind</h1>
     <h3 style="color: #93c5fd; margin: 6px 0 0 0; font-weight: 500;"> La scienza nel piatto, la salute nella mente.</h3>
 </div>
 """, unsafe_allow_html=True)
